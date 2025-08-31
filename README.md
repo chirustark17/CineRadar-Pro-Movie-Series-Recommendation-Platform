@@ -63,35 +63,3 @@ Icons: Font Awesome for a comprehensive icon set.
 
 Fonts: Google Fonts (Inter) for clean and modern typography.
 
-🚀 Getting Started
-This project is a single-file web application and does not require a build step.
-
-Prerequisites
-You just need a modern web browser that can run JavaScript.
-
-Installation & Running Locally
-Clone the repository:
-
-git clone [https://github.com/your-username/cineradar-pro.git](https://github.com/your-username/cineradar-pro.git)
-
-Navigate to the project directory:
-
-cd cineradar-pro
-
-Open the index.html file:
-Simply open the index.html file directly in your web browser (e.g., Google Chrome, Firefox, Safari).
-
-That's it! The application will be running locally.
-
-💡 How It Works
-The application is built on a single index.html file, making it incredibly lightweight and portable.
-
-Data Fetching: All movie and TV show data is fetched in real-time from the TMDB API using asynchronous JavaScript (fetch API).
-
-State Management: User data, such as the watchlist and theme preferences, is stored in the browser's localStorage, ensuring persistence between sessions.
-
-Dynamic Rendering: The UI is dynamically generated with JavaScript. Movie cards, modals, and charts are all rendered based on the current application state and API responses.
-
-Personalization: The recommendation algorithm and profile dashboard work by analyzing the detailed movie/show objects stored in the user's watchlist.
-
-This project was built to showcase modern frontend development techniques within a self-contained, single-file application.
