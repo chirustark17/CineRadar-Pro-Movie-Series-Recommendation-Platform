@@ -606,7 +606,10 @@
             localStorage.setItem("watchlist", JSON.stringify(state.watchlist));
             renderWatchlist();
             updateEnhancedProfile();
+            // This is the key fix: Re-run the filters to refresh the search results UI
+            applyFilters();
         }
+
 
         async function updateRecommendations() {
             const recSection = document.getElementById('recommendationsSection');
@@ -952,23 +955,6 @@
                 } else {
                     await addToWatchlist(itemData);
                 }
-                
-                const allCardsForThisMovie = document.querySelectorAll(`.movie-card[data-movie-id="${itemData.id}"]`);
-                allCardsForThisMovie.forEach(card => {
-                    const btn = card.querySelector('.quick-watchlist-btn');
-                    if (btn) {
-                        const icon = btn.querySelector('i');
-                        if (isInWatchlist) {
-                            btn.classList.remove('bg-green-600');
-                            btn.title = 'Add to Watchlist';
-                            icon.className = 'fas fa-plus text-sm';
-                        } else {
-                            btn.classList.add('bg-green-600');
-                            btn.title = 'In Watchlist';
-                            icon.className = 'fas fa-check text-sm';
-                        }
-                    }
-                });
             }
             if (e.target.closest('#modalWatchlistBtn')) {
                 const itemData = JSON.parse(e.target.dataset.movie.replace(/&apos;/g, "'"));
